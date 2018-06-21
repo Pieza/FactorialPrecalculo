@@ -9,23 +9,40 @@
         
         <!--Scripts-->
         <script src="https://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
-        <script src="js/semantic.min.js"></script>
+        <script src="js/lib/semantic.min.js"></script>
+        <script src="js/lib/annyang.min.js"></script>
+        
     </head>
     <body>
         <div id="app">
             <div>
                 <h2 class="ui header">Número: {{number}}</h2> 
+                <h2 class="ui header">Resultado: {{result}}</h2> 
                 <div class="ui icon input">
                     <input type="number" v-model="number" placeholder="Escribe el númerillo" />
-                    <i class="microphone icon"></i>       
+                </div>
+                <button class="ui right labeled icon button" @click="getResult()">
+                    <i class="right arrow icon"></i>
+                    Darle
+                </button>
+                <!--<button class="ui labeled icon button" onclick="vueModule.getResult()">
+                    <i class="microphone icon"></i>    
+                    Escuchar
+                  </button>-->
+                <div>
+                    <p>Instrucciones:</p>
+                    <p>Di un numero para que aparesca en pantalla</p>
+                    <p>Di 'calcular' para obtener el factorial</p>
+                    <p>Di 'borrar' para borrar el numero dicho o limpiar la pantalla</p>
+                    <p>O hazlo manual</p>
                 </div>
             </div>
         </div>
-
-        
         
         <!--Add VueJs-->
-        <script src="js/vue.min.js"></script>
-        <script src="js/vueScript.js"></script>
+        <script src="js/lib/vue.min.js"></script>
+        <script src="js/vueModule.js"></script>
+
+        <script src="js/voiceScript.js"></script>
     </body>
 </html>
