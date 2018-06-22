@@ -6,19 +6,25 @@ var vueModule = new Vue({
     data: function() {
         return {
             number: null,   //The number we want to know the factorial
-            result: null    //Factorial of number
+            result: null,    //Factorial of number
+            steps: ""
         }
     },
     methods: {
-        getFactorial(n) { 
+        getFactorial(n) {
             if (n == 0){ //If number is 0, return 1
               return 1; 
             }
+            if (n != this.number)
+              this.steps += " x " + n;
+            else
+              this.steps += n;
             return n * this.getFactorial(n-1); //We use recursion to multiply n by n - 1 until we reach 0
             this.result = n;    
           },
           getResult(){     
               this.result = null;
+              this.steps = "";
               if(this.number != null){
                 this.result = this.getFactorial(this.number); //Set result value to print it into screen
               }
@@ -26,6 +32,7 @@ var vueModule = new Vue({
           clear(){  //Use this method to clear numbers at screen
             this.number = null; 
             this.result = null;
+            this.steps = "";
           }
     }
 }).$mount('#app'); 
