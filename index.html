@@ -16,25 +16,45 @@
     <body>
         <div id="app">
             <div>
-                <h2 class="ui header">Número: {{number}}</h2> 
-                <h2 class="ui header">Resultado: {{result}}</h2> 
-                <div class="ui icon input">
-                    <input type="number" v-model="number" placeholder="Escribe el númerillo" />
+                <h1 class="ui center aligned header">Factorial</h1>
+                <div class="ui raised very padded text container segment">
+                    <h2 class="ui header">Número: {{number}}</h2>
+                    <h2 v-if="this.result != null" class="ui header">{{steps}} = {{result}}</h2> 
+                    <h2 class="ui header">Factorial: {{result}}</h2> 
+                    <!--<button class="ui labeled icon button" onclick="vueModule.getResult()">
+                        <i class="microphone icon"></i>    
+                        Escuchar
+                    </button>-->
                 </div>
-                <button class="ui right labeled icon button" @click="getResult()">
-                    <i class="right arrow icon"></i>
-                    Darle
-                </button>
-                <!--<button class="ui labeled icon button" onclick="vueModule.getResult()">
-                    <i class="microphone icon"></i>    
-                    Escuchar
-                  </button>-->
-                <div>
-                    <p>Instrucciones:</p>
-                    <p>Di un numero para que aparesca en pantalla</p>
-                    <p>Di 'calcular' para obtener el factorial</p>
-                    <p>Di 'borrar' para borrar el numero dicho o limpiar la pantalla</p>
-                    <p>O hazlo manual</p>
+                <div class="ui raised very padded text container">
+                    <div class="four column centered row">
+                        <div class="ui icon input">
+                            <input type="number" v-model="number" placeholder="Escribe el númerillo" />
+                        </div>
+                        <button class="ui right labeled icon button" @click="getResult()">
+                            <i class="right arrow icon"></i>
+                            Darle
+                        </button>
+                    </div>
+                </div>
+                <div class="ui hidden divider"></div>
+                <div class="ui container">
+                    <div class="ui centered grid">
+                        <div class="ui card">
+                                <div class="content">
+                                    <div class="header">Instrucciones</div>
+                                    <!--<div class="meta">
+                                    <span>texto en gris</span>
+                                    <a>mas texto en gris</a>
+                                    </div>-->
+                                    <p>* Di un numero para que aparesca en pantalla</p>
+                                    <p>* Di 'calcular' para obtener el factorial</p>
+                                    <p>* Di 'borrar' para borrar el numero dicho o limpiar la pantalla</p>
+                                    <p>* También puedes decir 'Factorial de' seguido de un número y el factorial se calculará automaticamente</p>
+                                    <p>* O hazlo manual</p>
+                                </div>
+                            </div>
+                    </div>
                 </div>
             </div>
         </div>
