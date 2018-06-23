@@ -21,10 +21,6 @@
                     <h2 class="ui header">Número: {{number}}</h2>
                     <h2 v-if="this.result != null" class="ui header">{{steps}} = {{result}}</h2> 
                     <h2 class="ui header">Factorial: {{result}}</h2> 
-                    <!--<button class="ui labeled icon button" onclick="vueModule.getResult()">
-                        <i class="microphone icon"></i>    
-                        Escuchar
-                    </button>-->
                 </div>
                 <div class="ui raised very padded text container">
                     <div class="four column centered row">
@@ -34,6 +30,11 @@
                         <button class="ui right labeled icon button" @click="getResult()">
                             <i class="right arrow icon"></i>
                             Darle
+                        </button>
+                        <button class="ui labeled icon button" @click="toggle()">
+                            <i class="microphone icon"></i>    
+                            <label v-if="listen">Detener</label>
+                            <label v-else>Escuchar</label>
                         </button>
                     </div>
                 </div>
