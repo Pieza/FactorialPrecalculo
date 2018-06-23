@@ -38,9 +38,9 @@ var vueModule = new Vue({
           toggle(){
               this.listen = !this.listen;
               if(this.listen){
-                  annyang.resume();
+                  annyang.start();
               } else {
-                  annyang.pause();
+                  annyang.abort();
               }
           }
     }
