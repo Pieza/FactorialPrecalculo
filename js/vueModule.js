@@ -5,9 +5,10 @@ var vueModule = new Vue({
     template: '#app',
     data: function() {
         return {
-            number: null,   //The number we want to know the factorial
-            result: null,    //Factorial of number
-            steps: ""
+            number: null, //The number we want to know the factorial
+            result: null, //Factorial of number
+            steps: "",     //Steps to get factorial
+            listen: true
         }
     },
     methods: {
@@ -33,6 +34,14 @@ var vueModule = new Vue({
             this.number = null; 
             this.result = null;
             this.steps = "";
+          },
+          toggle(){
+              this.listen = !this.listen;
+              if(this.listen){
+                  annyang.resume();
+              } else {
+                  annyang.pause();
+              }
           }
     }
 }).$mount('#app'); 
