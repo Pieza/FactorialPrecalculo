@@ -6,6 +6,9 @@ if (annyang) {
       'Calcular': function() {
         vueModule.getResult();
       },
+      'Deja de escucharme': function() {
+        vueModule.toggle();
+      },
       'Borrar': function() {
         vueModule.clear();
       },
