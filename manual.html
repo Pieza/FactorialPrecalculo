@@ -14,10 +14,11 @@
   <script src="js/lib/semantic.min.js"></script>
   <script src="js/lib/annyang.min.js"></script>
   <!--<script src="js/leap.min.js"></script>-->
-  <script src="https://js.leapmotion.com/0.2.0-beta1/leap.min.js"></script>
   <link rel="icon" type="image/x-icon" href="images/glif.ico" />
+
 </head>
 <body>
+
   <!--MENU-->
   <div class="ui container">
     <div class="ui grid">
@@ -44,7 +45,7 @@
     </div>
   </div>
 
-  <!--FACTORIAL APP-->
+  <!--DOWNLOAD AREA-->
 
   <div class="ui container">
     <div class="ui grid">
@@ -57,89 +58,80 @@
             <div class="eight wide column">
               <img class="ui fluid centered medium image" src="images/manual3.png">
             </div>
-            <div style="word-wrap: break-word;flex: inherit" class="eight wide justified column">
+            <div class="eight wide justified column">
               <p >Todas las instrucciones, paso a paso, que tenés que seguir para lograr utilizar la aplicación las podrás encontrar en el manual de usuario. Así mismo, describiremos un poco el proceso de desarrollo de la aplicación web, frameworks, librerias, extensiones y finalmente el repositorio de Git para que cualquiera pueda utilizar el código. Cabe destacar que el propósito de este proyecto es meramente educativo y que, por lo tanto, todo su contenido se desarrollo con herramientas open-source.</p>
             </div>
             <div class="sixteen wide column">
               <a href="docs/Manual.pdf" download="MathCode Manual" target="_blank "> <!--Download Doc-->
-              <button href="docs/Manual.pdf" class="massive ui teal fluid vertical animated button" > <div class="hidden content">Descargar Manual</div>
-                <div class="visible content">
-                  <i class="cloud download icon"></i>
-                </button>
-              </a>
-                </div>
+                <button href="docs/Manual.pdf" class="massive ui teal fluid vertical animated button" > <div class="hidden content">Descargar Manual</div>
+                  <div class="visible content">
+                    <i class="cloud download icon"></i>
+                  </button>
+                </a>
               </div>
             </div>
-            <div class="ui container"></div> <!--Line to center cointener-->
           </div>
+          <div class="ui container"></div> <!--Line to center cointener-->
         </div>
       </div>
     </div>
+  </div>
 
-    <!--Add VueJs-->
-    <script src="js/lib/vue.min.js"></script>
-    <script src="js/vueModule.js"></script>
+  <!--Add VueJs-->
+  <script src="js/lib/vue.min.js"></script>
+  <script src="js/vueModule.js"></script>
 
-    <!--Scripts-->
-    <script src="js/voiceScript.js"></script>
-    <script src="js/leapScript.js"></script>
+  <!--Scripts-->
 
-    <!--Menu Responsive-->
-    <style type="text/css">
-    body {
-      min-height: 2000px;
-    }
-    body > .ui.container {
-      margin-top: 6em;
-    }
+  <!--Menu Responsive-->
+  <style type="text/css">
+  body {
+    min-height: 2000px;
+  }
+  body > .ui.container {
+    margin-top: 6em;
+  }
 
-    .ui.fixed.borderless.menu {
-      background-color: #f8f8f8;
-    }
-    .ui.fixed.borderless.menu .row > a.header.item {
-      font-size: 1.2em;
-    }
+  .ui.fixed.borderless.menu {
+    background-color: #f8f8f8;
+  }
+  .ui.fixed.borderless.menu .row > a.header.item {
+    font-size: 1.2em;
+  }
 
-    .ui.vertical.menu {
-      display: none;
-      border: none;
-      box-shadow: none;
-      background-color: #f8f8f8;
-    }
-    .ui.vertical.menu > .item {
-      padding-left: 1.428em;
-    }
-    .ui.vertical.menu .item .title .dropdown.icon {
-      float: none;
-    }
-    .ui.vertical.menu .item .content .item {
-      padding: 0.5em 1em;
-    }
-    .ui.vertical.menu .header.item {
-      text-transform: uppercase;
-    }
+  .ui.vertical.menu {
+    display: none;
+    border: none;
+    box-shadow: none;
+    background-color: #f8f8f8;
+  }
+  .ui.vertical.menu > .item {
+    padding-left: 1.428em;
+  }
+  .ui.vertical.menu .item .title .dropdown.icon {
+    float: none;
+  }
+  .ui.vertical.menu .item .content .item {
+    padding: 0.5em 1em;
+  }
+  .ui.vertical.menu .header.item {
+    text-transform: uppercase;
+  }
 
-    .ui.message {
-      background-color: rga(238, 238, 238);
-      box-shadow: none;
-      padding: 5em 4em;
-    }
-    .ui.message h1.ui.header {
-      font-size: 4.5em;
-    }
-    .ui.message p.lead {
-      font-size: 1.3em;
-      color: #333333;
-      line-height: 1.4;
-      font-weight: 300;
-    }
-    .force-wrap {
-      white-space: pre-wrap;
-      white-space: -o-pre-wrap;
-      white-space: -moz-pre-wrap;
-      white-space: -hp-pre-wrap;
-      word-wrap: break-word;
-    }
+  .ui.message {
+    background-color: rga(238, 238, 238);
+    box-shadow: none;
+    padding: 5em 4em;
+  }
+  .ui.message h1.ui.header {
+    font-size: 4.5em;
+  }
+  .ui.message p.lead {
+    font-size: 1.3em;
+    color: #333333;
+    line-height: 1.4;
+    font-weight: 300;
+  }
   </style>
   <script>
   $(document).ready(function() {
