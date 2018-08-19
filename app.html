@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>MathCode</title>
+  <!--Responsive tag-->
+  <meta name="viewport" content="width=device-width, user-scalable=no">
+
+  <!--Styles-->
+  <link rel="stylesheet" type="text/css" href="css/semantic.min.css">
+
+  <!--Libraries-->
+  <script src="https://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
+  <script src="js/lib/semantic.min.js"></script>
+  <script src="js/lib/annyang.min.js"></script>
+  <!--<script src="js/leap.min.js"></script>-->
+  <script src="https://js.leapmotion.com/0.2.0-beta1/leap.min.js"></script>
+  <link rel="icon" type="image/x-icon" href="images/glif.ico" />
+</head>
+<body>
+  <!--MENU-->
+  <div class="ui container">
+    <div class="ui grid">
+      <div class="ui fixed borderless huge menu">
+        <div class="ui container grid">
+          <div class="computer only row">
+            <div class="header item">MathCode</div><a href="templates/bootstrap/index.html" class="item">Inicio</a><a href="app.html" class="active item">Aplicación</a><a href="manual.html" class="item">Manual</a>
+          </div>
+          <div class="tablet mobile only row">
+            <a href="index.html" class="header item">MathCode</a>
+            <div class="right menu">
+              <a class="menu item">
+                <div class="ui basic icon toggle button">
+                  <i class="content icon"></i>
+                </div>
+              </a>
+            </div>
+            <div class="ui vertical accordion borderless fluid menu">
+              <a href="index.html" class="active item">Inicio</a><a href="app.html" class="item">Aplicación</a><a href="manual.html" class="item">Manual</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!--FACTORIAL APP-->
+
+  <div class="ui container">
+    <div class="ui grid">
+      <div id="app">
+        <div>
+          <h1 class="ui huge very padded text container dividing header"> <i class="calculator icon"></i> <div class="content"> Calcular Factorial </div> </h1>
+          <div class="ui hidden divider"></div>
+          <div class="ui raised very padded text container segment">
+            <h2 class="ui header">Número: {{number}}</h2>
+            <h2 v-if="this.result != null" class="ui header">{{steps}} = {{result}}</h2>
+            <h2 class="ui header">Factorial: {{result}}</h2>
+          </div>
+          <div class="ui hidden divider"></div>
+          <div class="ui very padded text container">
+            <div class="ui grid ">
+              <div class="eight wide column">
+                <div class="ui fluid action input">
+                  <input type="number" v-model="number" placeholder="Escriba el número">
+                  <button class="ui primary icon button" @click="getResult()">
+                    <i class="large arrow circle right icon"></i>
+                  </button>
+                </div>
+              </div>
+              <div class="eight wide column">
+                <button class="ui large fluid  button"> Procedimiento </button>
+              </div>
+              <div class="eight wide column">
+                <div class="ui vertical animated fluid inverted primary button">
+                  <div class="hidden content">Escuchar</div>
+                  <div class="visible content">
+                    <i class="big microphone icon"></i>
+                  </div>
+                </div>
+              </div>
+              <div class="eight wide column">
+                <div class="ui vertical animated fluid inverted primary button">
+                  <div class="hidden content">Leap Motion</div>
+                  <div class="visible content">
+                    <i class="big sign language icon"></i>
+                  </div>
+                </div>
+              </div>
+              <div class="sixteen wide column">
+                <button class="ui large fluid primary button"> Instrucciones </button>
+              </div>
+            </div>
+          </div>
+          <div class="ui container"></div> <!--Line to center cointener-->
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!--Add VueJs-->
+<script src="js/lib/vue.min.js"></script>
+<script src="js/vueModule.js"></script>
+
+<!--Scripts-->
+<script src="js/voiceScript.js"></script>
+<script src="js/leapScript.js"></script>
+
+<!--Menu Responsive-->
+<style type="text/css">
+body {
+  min-height: 2000px;
+}
+body > .ui.container {
+  margin-top: 6em;
+}
+
+.ui.fixed.borderless.menu {
+  background-color: #f8f8f8;
+}
+.ui.fixed.borderless.menu .row > a.header.item {
+  font-size: 1.2em;
+}
+
+.ui.vertical.menu {
+  display: none;
+  border: none;
+  box-shadow: none;
+  background-color: #f8f8f8;
+}
+.ui.vertical.menu > .item {
+  padding-left: 1.428em;
+}
+.ui.vertical.menu .item .title .dropdown.icon {
+  float: none;
+}
+.ui.vertical.menu .item .content .item {
+  padding: 0.5em 1em;
+}
+.ui.vertical.menu .header.item {
+  text-transform: uppercase;
+}
+
+.ui.message {
+  background-color: rga(238, 238, 238);
+  box-shadow: none;
+  padding: 5em 4em;
+}
+.ui.message h1.ui.header {
+  font-size: 4.5em;
+}
+.ui.message p.lead {
+  font-size: 1.3em;
+  color: #333333;
+  line-height: 1.4;
+  font-weight: 300;
+}
+</style>
+<script>
+$(document).ready(function() {
+  $('.ui.dropdown').dropdown();
+  $('.ui.accordion').accordion();
+
+  // bind "hide and show vertical menu" event to top right icon button
+  $('.ui.toggle.button').click(function() {
+    $('.ui.vertical.menu').toggle("250", "linear")
+  });
+});
+</script>
+</body>
+</html>
