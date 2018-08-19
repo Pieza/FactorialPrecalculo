@@ -1,73 +1,171 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <!--Responsive tag-->
-        <meta name="viewport" content="width=device-width, user-scalable=no">
-        
-        <!--Styles-->
-        <link rel="stylesheet" type="text/css" href="css/semantic.min.css">
-        
-        <!--Libraries-->
-        <script src="https://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
-        <script src="js/lib/semantic.min.js"></script>
-        <script src="js/lib/annyang.min.js"></script>
-        <!--<script src="js/leap.min.js"></script>-->
-        <script src="https://js.leapmotion.com/0.2.0-beta1/leap.min.js"></script>
-        
-    </head>
-    <body>
-        <div id="app">
-            <div>
-                <h1 class="ui center aligned header">Factorial</h1>
-                <div class="ui raised very padded text container segment">
-                    <h2 class="ui header">Número: {{number}}</h2>
-                    <h2 v-if="this.result != null" class="ui header">{{steps}} = {{result}}</h2> 
-                    <h2 class="ui header">Factorial: {{result}}</h2> 
+<head>
+  <!--Responsive tag-->
+  <meta name="viewport" content="width=device-width, user-scalable=no">
+
+  <!--Styles-->
+  <link rel="stylesheet" type="text/css" href="css/semantic.min.css">
+
+  <!--Libraries-->
+  <script src="https://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
+  <script src="js/lib/semantic.min.js"></script>
+  <script src="js/lib/annyang.min.js"></script>
+  <!--<script src="js/leap.min.js"></script>-->
+  <script src="https://js.leapmotion.com/0.2.0-beta1/leap.min.js"></script>
+
+</head>
+<body>
+
+  <!--MENU-->
+  <div class="ui container">
+    <div class="ui grid">
+      <div class="ui fixed borderless huge menu">
+        <div class="ui container grid">
+          <div class="computer only row">
+            <a class="header item">MathCode</a><a class="active item">Inicio</a><a class="item">Aplicación</a><a class="item">Manual</a>
+          </div>
+          <div class="tablet mobile only row">
+            <a class="header item">MathCode</a>
+            <div class="right menu">
+              <a class="menu item">
+                <div class="ui basic icon toggle button">
+                  <i class="content icon"></i>
                 </div>
-                <div class="ui raised very padded text container">
-                    <div class="four column centered row">
-                        <div class="ui icon input">
-                            <input type="number" v-model="number" placeholder="Escribe el númerillo" />
-                        </div>
-                        <button class="ui right labeled icon button" @click="getResult()">
-                            <i class="right arrow icon"></i>
-                            Darle
-                        </button>
-                        <button class="ui labeled icon button" @click="toggle()">
-                            <i class="microphone icon"></i>    
-                            <label v-if="listen">Detener</label>
-                            <label v-else>Escuchar</label>
-                        </button>
-                    </div>
-                </div>
-                <div class="ui hidden divider"></div>
-                <div class="ui container">
-                    <div class="ui centered grid">
-                        <div class="ui card">
-                                <div class="content">
-                                    <div class="header">Instrucciones</div>
-                                    <!--<div class="meta">
-                                    <span>texto en gris</span>
-                                    <a>mas texto en gris</a>
-                                    </div>-->
-                                    <p>* Di un numero para que aparesca en pantalla</p>
-                                    <p>* Di 'calcular' para obtener el factorial</p>
-                                    <p>* Di 'borrar' para borrar el numero dicho o limpiar la pantalla</p>
-                                    <p>* Di 'Deja de escucharme' para detener la grabación del microfono</p>
-                                    <p>* También puedes decir 'Factorial de' seguido de un número y el factorial se calculará automaticamente</p>
-                                    <p>* O hazlo manual</p>
-                                </div>
-                            </div>
-                    </div>
-                </div>
+              </a>
             </div>
+            <div class="ui vertical accordion borderless fluid menu">
+              <a class="active item">Inicio</a><a class="item">Aplicación</a><a class="item">Manual</a>
+            </div>
+          </div>
         </div>
-        
-        <!--Add VueJs-->
-        <script src="js/lib/vue.min.js"></script>
-        <script src="js/vueModule.js"></script>
-        <!--Scripts-->
-        <script src="js/voiceScript.js"></script>
-        <script src="js/leapScript.js"></script>
-    </body>
+      </div>
+    </div>
+  </div>
+
+  <!--FACTORIAL APP-->
+
+  <div class="ui container">
+    <div class="ui grid">
+      <div id="app">
+        <div>
+          <h1 class="ui huge very padded text container dividing header"> <i class="calculator icon"></i> <div class="content"> Calcular Factorial </div> </h1>
+          <div class="ui hidden divider"></div>
+          <div class="ui raised very padded text container segment">
+            <h2 class="ui header">Número: {{number}}</h2>
+            <h2 v-if="this.result != null" class="ui header">{{steps}} = {{result}}</h2>
+            <h2 class="ui header">Factorial: {{result}}</h2>
+          </div>
+          <div class="ui hidden divider"></div>
+          <div class="ui very padded text container">
+            <div class="ui grid ">
+              <div class="eight wide column">
+                <div class="ui fluid input">
+                  <input type="number" v-model="number" placeholder="Escriba el número"/>
+                </div>
+              </div>
+              <div class="four wide column">
+                <button class="ui fluid primary button" @click="getResult()"> Calcular </button>
+              </div>
+              <div class="four wide column">
+                <button class="ui fluid inverted primary button"> Procedimiento </button>
+              </div>
+              <div class="eight wide column">
+                <div class="ui vertical animated fluid inverted primary button">
+                  <div class="hidden content">Shop</div>
+                  <div class="visible content">
+                    <i class="microphone icon"></i>
+                  </div>
+                </div>
+              </div>
+              <div class="eight wide column">
+                <div class="ui vertical animated fluid inverted primary button">
+                  <div class="hidden content">Leap Motion</div>
+                  <div class="visible content">
+                    <i class="sign language icon"></i>
+                  </div>
+                </div>
+              </div>
+              <div class="sixteen wide column">
+                <button class="ui fluid primary button"> Instrucciones </button>
+              </div>
+            </div>
+          </div>
+          <div class="ui container"></div> <!--Line to center cointener-->
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!--Add VueJs-->
+<script src="js/lib/vue.min.js"></script>
+<script src="js/vueModule.js"></script>
+
+<!--Scripts-->
+<script src="js/voiceScript.js"></script>
+<script src="js/leapScript.js"></script>
+
+<!--Menu Responsive-->
+<style type="text/css">
+body {
+  min-height: 2000px;
+}
+body > .ui.container {
+  margin-top: 6em;
+}
+
+.ui.fixed.borderless.menu {
+  background-color: #f8f8f8;
+}
+.ui.fixed.borderless.menu .row > a.header.item {
+  font-size: 1.2em;
+}
+
+.ui.vertical.menu {
+  display: none;
+  border: none;
+  box-shadow: none;
+  background-color: #f8f8f8;
+}
+.ui.vertical.menu > .item {
+  padding-left: 1.428em;
+}
+.ui.vertical.menu .item .title .dropdown.icon {
+  float: none;
+}
+.ui.vertical.menu .item .content .item {
+  padding: 0.5em 1em;
+}
+.ui.vertical.menu .header.item {
+  text-transform: uppercase;
+}
+
+.ui.message {
+  background-color: rga(238, 238, 238);
+  box-shadow: none;
+  padding: 5em 4em;
+}
+.ui.message h1.ui.header {
+  font-size: 4.5em;
+}
+.ui.message p.lead {
+  font-size: 1.3em;
+  color: #333333;
+  line-height: 1.4;
+  font-weight: 300;
+}
+</style>
+<script>
+$(document).ready(function() {
+  $('.ui.dropdown').dropdown();
+  $('.ui.accordion').accordion();
+
+  // bind "hide and show vertical menu" event to top right icon button
+  $('.ui.toggle.button').click(function() {
+    $('.ui.vertical.menu').toggle("250", "linear")
+  });
+});
+</script>
+</body>
 </html>
