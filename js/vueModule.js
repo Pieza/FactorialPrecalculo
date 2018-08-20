@@ -8,7 +8,7 @@ var vueModule = new Vue({
             number: null, //The number we want to know the factorial
             result: null, //Factorial of number
             steps: "",     //Steps to get factorial
-            listen: true
+            listen: false  //Is the mic listening
         }
     },
     methods: {
@@ -41,7 +41,15 @@ var vueModule = new Vue({
                   annyang.start();
               } else {
                   annyang.abort();
-              }
+              }         
+          },
+          showSteps(){
+              $('.ui.modal')
+               .modal('show');
+          },
+          hideSteps(){
+            $('.ui.modal')
+             .modal('hide');
           }
     }
 }).$mount('#app'); 

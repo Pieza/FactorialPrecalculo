@@ -9,12 +9,27 @@ if (annyang) {
       'Deja de escucharme': function() {
         vueModule.toggle();
       },
+      'Silenciar': function() {
+        vueModule.toggle();
+      },
       'Borrar': function() {
+        vueModule.clear();
+      },
+      'Limpiar': function() {
         vueModule.clear();
       },
       'Factorial de *number': function(number) { 
         getNumberOnWords(number);
         vueModule.getResult();
+      },
+      'Ver procedimiento': function() {
+        vueModule.showSteps();
+      },
+      'Procedimiento': function() {
+        vueModule.showSteps();
+      },
+      'Pasos': function() {
+        vueModule.showSteps();
       }
     };
     // Add our commands to annyang
@@ -35,6 +50,4 @@ if (annyang) {
       }
     }
 
-    // Start listening. You can call this here, or attach this call to an event, button, etc.
-    annyang.start();
   }
