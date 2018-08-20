@@ -16,6 +16,7 @@
   <script src="https://js.leapmotion.com/0.2.0-beta1/leap.min.js"></script>
   <link rel="icon" type="image/x-icon" href="images/glif.ico" />
 </head>
+
 <body>
   <!--MENU-->
   <div class="ui container">
@@ -68,7 +69,7 @@
                 </div>
               </div>
               <div class="eight wide column">
-                <button class="ui large fluid  button"> Procedimiento </button>
+                <button class="ui large fluid  button" @click="showSteps()"> Procedimiento </button>
               </div>
               <div class="eight wide column">
                 <div class="ui vertical animated fluid inverted primary button">
@@ -92,11 +93,28 @@
             </div>
           </div>
           <div class="ui container"></div> <!--Line to center cointener-->
-        </div>
+          <!--Modal-->
+          <div class="ui modal">
+            <i class="close icon"></i>
+            <div class="header">
+              Procedimiento
+            </div>
+            <div class="image content">
+              <div class="description">
+                {{steps}} = {{result}}
+              </div>
+            </div>
+            <div class="actions">
+              <div class="ui button">OK</div>
+            </div>
+          </div>
+        </div>        
       </div>
     </div>
   </div>
 </div>
+
+
 
 <!--Add VueJs-->
 <script src="js/lib/vue.min.js"></script>
@@ -154,6 +172,9 @@ body > .ui.container {
   color: #333333;
   line-height: 1.4;
   font-weight: 300;
+}
+img[alt*="www.000webhost.com"] {
+    display: none;
 }
 </style>
 <script>

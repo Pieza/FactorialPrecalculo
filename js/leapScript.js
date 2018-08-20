@@ -1,3 +1,5 @@
+//Start leap motion recording
 Leap.loop(function(obj) {
-vueModule.number = obj.pointables.length;
+    //Count fingers on screen
+    vueModule.number = obj.pointables.length;
 });
