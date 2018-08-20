@@ -54,7 +54,6 @@
           <div class="ui hidden divider"></div>
           <div class="ui raised very padded text container segment">
             <h2 class="ui header">Número: {{number}}</h2>
-            <h2 v-if="this.result != null" class="ui header">{{steps}} = {{result}}</h2>
             <h2 class="ui header">Factorial: {{result}}</h2>
           </div>
           <div class="ui hidden divider"></div>
@@ -69,10 +68,10 @@
                 </div>
               </div>
               <div class="eight wide column">
-                <button class="ui large fluid  button" @click="showSteps()"> Procedimiento </button>
+                <button class="ui large fluid button" @click="showSteps()" :disabled="this.result == null"> Ver Procedimiento </button>
               </div>
               <div class="eight wide column">
-                <div class="ui vertical animated fluid inverted primary button">
+                <div class="ui vertical animated fluid inverted primary button"   @click="toggle()">
                   <div class="hidden content">Escuchar</div>
                   <div class="visible content">
                     <i class="big microphone icon"></i>
@@ -105,7 +104,7 @@
               </div>
             </div>
             <div class="actions">
-              <div class="ui button">OK</div>
+              <div class="ui button" @click="hideSteps()">Cerrar</div>
             </div>
           </div>
         </div>        
@@ -126,9 +125,7 @@
 
 <!--Menu Responsive-->
 <style type="text/css">
-body {
-  min-height: 2000px;
-}
+
 body > .ui.container {
   margin-top: 6em;
 }

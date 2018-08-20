@@ -9,12 +9,27 @@ if (annyang) {
       'Deja de escucharme': function() {
         vueModule.toggle();
       },
+      'Silenciar': function() {
+        vueModule.toggle();
+      },
       'Borrar': function() {
+        vueModule.clear();
+      },
+      'Limpiar': function() {
         vueModule.clear();
       },
       'Factorial de *number': function(number) { 
         getNumberOnWords(number);
         vueModule.getResult();
+      },
+      'Ver procedimiento': function() {
+        vueModule.showSteps();
+      },
+      'Procedimiento': function() {
+        vueModule.showSteps();
+      },
+      'Pasos': function() {
+        vueModule.showSteps();
       }
     };
     // Add our commands to annyang

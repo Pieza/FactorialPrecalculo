@@ -46,6 +46,10 @@ var vueModule = new Vue({
           showSteps(){
               $('.ui.modal')
                .modal('show');
+          },
+          hideSteps(){
+            $('.ui.modal')
+             .modal('hide');
           }
     }
 }).$mount('#app'); 
