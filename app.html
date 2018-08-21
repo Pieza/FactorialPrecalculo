@@ -63,7 +63,7 @@
               <div class="eight wide column">
                 <div class="ui fluid action input">
                   
-                  <input type="number" v-model="number" placeholder="Escriba el número">
+                  <input type="number" v-model="number" placeholder="Escriba el número" @keyup.enter="getResult()">
                   <button class="ui primary icon button" @click="getResult()">
                     <i class="large arrow circle right icon"></i>
                   </button>

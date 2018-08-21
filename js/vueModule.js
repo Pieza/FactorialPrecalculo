@@ -14,15 +14,25 @@ var vueModule = new Vue({
     },
     methods: {
         getFactorial(n) {
-            if (n == 0){ //If number is 0, return 1
-              return 1; 
-            }
-            if (n != this.number)
-              this.steps += " x " + n;
-            else
-              this.steps += n;
-            return n * this.getFactorial(n-1); //We use recursion to multiply n by n - 1 until we reach 0
-            this.result = n;    
+            if(n >= 0){
+                if (n == 0){ //If number is 0, return 0
+                    this.steps += 0 + " x " + n;
+                  return 0; 
+                }
+                if (n == 1){ //If number is 1, return 1
+                    this.steps += " x " + n;
+                    return  1; 
+                  }
+                if (n != this.number)
+                  this.steps += " x " + n;
+                else
+                  this.steps += n;
+                return n * this.getFactorial(n-1); //We use recursion to multiply n by n - 1 until we reach 0
+                this.result = n;
+            } else {
+                this.steps = 'No se puede calcular el factorial de un número negativo';
+                return 'No existe';          
+            }             
           },
           getResult(){     
               this.result = null;
