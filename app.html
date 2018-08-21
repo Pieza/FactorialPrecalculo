@@ -62,6 +62,7 @@
             <div class="ui grid ">
               <div class="eight wide column">
                 <div class="ui fluid action input">
+                  
                   <input type="number" v-model="number" placeholder="Escriba el número">
                   <button class="ui primary icon button" @click="getResult()">
                     <i class="large arrow circle right icon"></i>
@@ -72,7 +73,7 @@
                 <button class="ui large fluid button" @click="showSteps()" :disabled="this.result == null"> Ver Procedimiento </button>
               </div>
               <div class="eight wide column">
-                <div class="ui vertical animated fluid inverted primary button"   @click="toggle()">
+                <div class="ui vertical animated fluid inverted primary button" @click="toggle()">
                   <div class="hidden content">Escuchar</div>
                   <div class="visible content">
                     <i class="big microphone icon"></i>
@@ -88,11 +89,11 @@
                 </div>
               </div>
               <div class="sixteen wide column">
-                <button class="ui large fluid primary button"> Instrucciones </button>
+                <button class="ui large fluid primary button" @click="toggleInstructions()"> Instrucciones </button>
               </div>
-              <div class="ui very padded text container segment">
-                <div id="menu2">
-                  <div class="ui   four item secondary menu">
+              <div class="ui very padded text container segment" v-show="this.instructions">
+                <div id="menu2" >
+                  <div class="ui  four item secondary menu">
                     <a class="item active" data-tab="teclado">Teclado</a>
                     <a class="item" data-tab="voz">Voz</a>
                     <a class="item " data-tab="leap">Leap Motion</a>

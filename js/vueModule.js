@@ -8,7 +8,8 @@ var vueModule = new Vue({
             number: null, //The number we want to know the factorial
             result: null, //Factorial of number
             steps: "",     //Steps to get factorial
-            listen: false  //Is the mic listening
+            listen: false,  //Is the mic listening
+            instructions: false //Display instructions
         }
     },
     methods: {
@@ -50,6 +51,9 @@ var vueModule = new Vue({
           hideSteps(){
             $('.ui.modal')
              .modal('hide');
+          },
+          toggleInstructions(){ //hide/show instructions
+            this.instructions = !this.instructions;
           }
     }
 }).$mount('#app'); 
