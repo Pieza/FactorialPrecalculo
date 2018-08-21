@@ -7,6 +7,7 @@
 
   <!--Styles-->
   <link rel="stylesheet" type="text/css" href="css/semantic.min.css">
+  <link rel="stylesheet" type="text/css" href="css/style.css">
 
   <!--Libraries-->
   <script src="https://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
@@ -160,74 +161,7 @@
 <!--Scripts-->
 <script src="js/voiceScript.js"></script>
 <script src="js/leapScript.js"></script>
+<script src="js/scripts.js"></script>
 
-<!--Menu Responsive-->
-<style type="text/css">
-
-body > .ui.container {
-  margin-top: 6em;
-}
-
-.ui.fixed.borderless.menu {
-  background-color: #f8f8f8;
-}
-.ui.fixed.borderless.menu .row > a.header.item {
-  font-size: 1.2em;
-}
-
-.ui.vertical.menu {
-  display: none;
-  border: none;
-  box-shadow: none;
-  background-color: #f8f8f8;
-}
-.ui.vertical.menu > .item {
-  padding-left: 1.428em;
-}
-.ui.vertical.menu .item .title .dropdown.icon {
-  float: none;
-}
-.ui.vertical.menu .item .content .item {
-  padding: 0.5em 1em;
-}
-.ui.vertical.menu .header.item {
-  text-transform: uppercase;
-}
-
-.ui.message {
-  background-color: rga(238, 238, 238);
-  box-shadow: none;
-  padding: 5em 4em;
-}
-.ui.message h1.ui.header {
-  font-size: 4.5em;
-}
-.ui.message p.lead {
-  font-size: 1.3em;
-  color: #333333;
-  line-height: 1.4;
-  font-weight: 300;
-}
-img[alt*="www.000webhost.com"] {
-    display: none;
-}
-</style>
-<script>
-$(document).ready(function() {
-  $('.ui.dropdown').dropdown();
-  $('.ui.accordion').accordion();
-
-  // bind "hide and show vertical menu" event to top right icon button
-  $('.ui.toggle.button').click(function() {
-    $('.ui.vertical.menu').toggle("250", "linear")
-  });
-});
-$('#menu2 .menu .item')
-  .tab({
-    context: 'parent'
-  })
-;
-
-</script>
 </body>
 </html>
