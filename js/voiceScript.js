@@ -30,6 +30,15 @@ if (annyang) {
       },
       'Pasos': function() {
         vueModule.showSteps();
+      },
+      'Oultar': function() {
+        vueModule.hideSteps();
+      },
+      'Cerrar procedimiento': function() {
+        vueModule.hideSteps();
+      },
+      'Oultar procedimiento': function() {
+        vueModule.hideSteps();
       }
     };
     // Add our commands to annyang

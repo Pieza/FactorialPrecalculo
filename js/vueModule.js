@@ -9,7 +9,8 @@ var vueModule = new Vue({
             result: null, //Factorial of number
             steps: "",     //Steps to get factorial
             listen: false,  //Is the mic listening
-            instructions: false //Display instructions
+            instructions: false, //Display instructions
+            leap: false
         }
     },
     methods: {
@@ -53,6 +54,9 @@ var vueModule = new Vue({
               } else {
                   annyang.abort();
               }         
+          },
+          toggleLeap(){
+            this.leap = !this.leap;
           },
           showSteps(){
               $('.ui.modal')
