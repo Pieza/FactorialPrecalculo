@@ -73,15 +73,17 @@
                 <button class="ui large fluid button" @click="showSteps()" :disabled="this.result == null"> Ver Procedimiento </button>
               </div>
               <div class="eight wide column">
-                <div class="ui vertical animated fluid inverted primary button" @click="toggle()">
-                  <div class="hidden content">Escuchar</div>
+                <div v-bind:class="{'ui vertical animated fluid inverted red button': !listen, 'ui vertical animated fluid inverted green button' : listen}" @click="toggle()">
+                  <div v-if="listen" class="hidden content">Escuchando</div>
+                  <div v-if="!listen" class="hidden content">Detenido</div>
                   <div class="visible content">
-                    <i class="big microphone icon"></i>
+                    <i v-if="!listen" class="big microphone slash icon"></i>
+                    <i v-if="listen" class="big microphone icon"></i>
                   </div>
                 </div>
               </div>
               <div class="eight wide column">
-                <div class="ui vertical animated fluid inverted primary button">
+                <div v-bind:class="{'ui vertical animated fluid inverted red button': !leap, 'ui vertical animated fluid inverted green button' : leap}" @click="toggleLeap()">
                   <div class="hidden content">Leap Motion</div>
                   <div class="visible content">
                     <i class="big sign language icon"></i>
@@ -97,7 +99,6 @@
                     <a class="item active" data-tab="teclado">Teclado</a>
                     <a class="item" data-tab="voz">Voz</a>
                     <a class="item " data-tab="leap">Leap Motion</a>
-                    <a class="item " data-tab="AI">Machine Learning</a>
                   </div>
                   <div class="ui active tab segment" data-tab="teclado">
                     <h2 class="ui dividing header"> Por teclado </h2>
@@ -119,14 +120,6 @@
                     <p>2. Presione el botón "Leap Motion"</p>
                     <p>3. Coloque sus manos en el dispositivo</p>
                     <p>4. Señale con los dedos el número a insertar </p>
-                    <p>5. Si quiere ver todo el procedimiento, haga click en el botón "Ver Procedimineto"</p>
-                  </div>
-                  <div class="ui tab segment" data-tab="AI">
-                    <h2 class="ui dividing header"> Con el módulo de machine learning </h2>
-                    <p>1.</p>
-                    <p>2. </p>
-                    <p>3. </p>
-                    <p>4. </p>
                     <p>5. Si quiere ver todo el procedimiento, haga click en el botón "Ver Procedimineto"</p>
                   </div>
                 </div>
