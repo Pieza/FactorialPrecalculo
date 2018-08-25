@@ -1,0 +1,41 @@
+.result{
+    font-family: 'Merriweather Sans', sans-serif;
+    background: white;
+    width: 9%;
+    font-size: 1.1pc;
+    border: solid 1px rgb(0, 0, 0);
+    color:#777777;
+    overflow: hidden;
+    height: 70px;
+    padding-top: 5px;
+}
+
+.main{
+
+
+    text-align: center;
+}
+.result {font-size: 10px;}
+table{
+    text-align: center;
+    padding: 10px;
+}
+
+canvas{
+    border:solid 1px rgb(73, 101, 178);
+}
+canvas:hover{
+    border:solid 1px lime;
+}
+a{
+    display: inline;
+    text-decoration: none;
+    color:rgb(73, 101, 178);
+}
+a:hover{
+    border-bottom:solid 1px rgb(73, 101, 178);
+}
+b{
+    color:rgb(73, 101, 178);
+}
+

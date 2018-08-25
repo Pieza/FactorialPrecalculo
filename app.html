@@ -8,6 +8,7 @@
   <!--Styles-->
   <link rel="stylesheet" type="text/css" href="css/semantic.min.css">
   <link rel="stylesheet" type="text/css" href="css/style.css">
+  <link rel="stylesheet" type="text/css" href="styleAI.css">
 
   <!--Libraries-->
   <script src="https://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
@@ -16,6 +17,7 @@
   <!--<script src="js/leap.min.js"></script>-->
   <script src="https://js.leapmotion.com/0.2.0-beta1/leap.min.js"></script>
   <link rel="icon" type="image/x-icon" href="images/glif.ico" />
+  <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@0.11.2"> </script>
 </head>
 
 <body>
@@ -90,6 +92,45 @@
                   </div>
                 </div>
               </div>
+
+              <div class="ui container" v-show="this.canvas">
+
+     <center>
+<div class="main">
+
+    
+    <canvas id="canvas"></canvas>
+    <div class="results-container">
+        <table>
+            <tr>
+                <th class="result">Guess: 0 chance: <spam id="data1">0</spam>%</th>
+                <th class="result" >Guess: 1 chance: <spam id="data2">0</spam>%</th>
+                <th class="result" >Guess: 2 chance: <spam id="data3">0</spam>%</th>
+                <th class="result" >Guess: 3 chance: <spam id="data4">0</spam>%</th>
+                <th class="result" >Guess: 4 chance: <spam id="data5">0</spam>%</th>
+                <th class="result" >Guess: 5 chance: <spam id="data6">0</spam>%</th>
+                <th class="result" >Guess: 6 chance: <spam id="data7">0</spam>%</th>
+                <th class="result" >Guess: 7 chance: <spam id="data8">0</spam>%</th>
+                <th class="result" >Guess: 8 chance: <spam id="data9">0</spam>%</th>
+                <th class="result" >Guess: 9 chance: <spam id="data10">0</spam>%</th>
+            </tr>
+
+        </table>
+
+    </div>
+    <input  class="ui primary basic button" type="button" id="btn" value="Adivinar imagen"/>
+    <input  class="ui primary basic button" type="button" id="clr" value="Borrar imagen"/>
+</div>
+
+</center>
+                
+
+              </div>
+
+              <div class="sixteen wide column">
+                <button class="ui large fluid primary button" @click="toggleCanvas()"> Machine Learning </button>
+              </div>
+
               <div class="sixteen wide column">
                 <button class="ui large fluid primary button" @click="toggleInstructions()"> Instrucciones </button>
               </div>
@@ -156,6 +197,8 @@
 <script src="js/voiceScript.js"></script>
 <script src="js/leapScript.js"></script>
 <script src="js/scripts.js"></script>
+<script src="Scripts/script.js"></script>
+<script src="Scripts/drawing.js"></script>
 
 </body>
 </html>

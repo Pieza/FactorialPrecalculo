@@ -1,6 +1,7 @@
 /* Create a Vue instance
     Save instance into a variable to make vue methods accesible to other scripts
 */
+
 var vueModule = new Vue({
     template: '#app',
     data: function() {
@@ -10,7 +11,18 @@ var vueModule = new Vue({
             steps: "",     //Steps to get factorial
             listen: false,  //Is the mic listening
             instructions: false, //Display instructions
-            leap: false
+            canvas: false, //Display instructions
+            leap: false,
+            data1 : 0,
+            data2 : 0,
+            data3 : 0,
+            data4 : 0,
+            data5 : 0,
+            data6 : 0,
+            data8 : 0,
+            data7 : 0,
+            data9 : 0,
+            data10 : 0,
         }
     },
     methods: {
@@ -68,6 +80,9 @@ var vueModule = new Vue({
           },
           toggleInstructions(){ //hide/show instructions
             this.instructions = !this.instructions;
+          },
+          toggleCanvas(){ //hide/show instructions
+            this.canvas = !this.canvas;
           }
     }
 }).$mount('#app'); 
