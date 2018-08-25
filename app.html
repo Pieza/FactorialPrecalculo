@@ -73,7 +73,7 @@
                 <button class="ui large fluid button" @click="showSteps()" :disabled="this.result == null"> Ver Procedimiento </button>
               </div>
               <div class="eight wide column">
-                <div v-bind:class="{'ui vertical animated fluid inverted red button': !listen, 'ui vertical animated fluid inverted green button' : listen}" @click="toggle()">
+                <div v-bind:class="{'ui vertical animated fluid inverted primary button': listen, 'ui vertical animated fluid button' : !listen}" @click="toggle()">
                   <div v-if="listen" class="hidden content">Escuchando</div>
                   <div v-if="!listen" class="hidden content">Detenido</div>
                   <div class="visible content">
@@ -83,7 +83,7 @@
                 </div>
               </div>
               <div class="eight wide column">
-                <div v-bind:class="{'ui vertical animated fluid inverted red button': !leap, 'ui vertical animated fluid inverted green button' : leap}" @click="toggleLeap()">
+                <div v-bind:class="{'ui vertical animated fluid inverted primary button': leap, 'ui vertical animated fluid button' : !leap}" @click="toggleLeap()">
                   <div class="hidden content">Leap Motion</div>
                   <div class="visible content">
                     <i class="big sign language icon"></i>
