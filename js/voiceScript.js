@@ -18,7 +18,7 @@ if (annyang) {
       'Limpiar': function() {
         vueModule.clear();
       },
-      'Factorial de *number': function(number) { 
+      'Factorial de *number': function(number) {
         getNumberOnWords(number);
         vueModule.getResult();
       },
@@ -42,12 +42,22 @@ if (annyang) {
       },
       'Ocultar procedimiento': function() {
         vueModule.hideSteps();
+      },
+      'Mostrar Instrucciones': function() {
+        vueModule.toggleInstruccions();
+      },
+      'Instrucciones': function() {
+        vueModule.toggleInstruccions();
+      },
+      'Oculatar Instrucciones': function() {
+        vueModule.toggleInstruccions();
       }
+
     };
     // Add our commands to annyang
     annyang.addCommands(commands);
     annyang.setLanguage("es-MX");
-    
+
     annyang.addCallback('result', function(phrases) {
       phrases.forEach(word => {
         getNumberOnWords(word);
@@ -58,7 +68,7 @@ if (annyang) {
     function getNumberOnWords(word){
       var wordToNumber = word.match(regex); //match words that are numbers
       if(wordToNumber != null){
-        return vueModule.number = word;   //Set number with the one heard 
+        return vueModule.number = word;   //Set number with the one heard
       }
     }
 
