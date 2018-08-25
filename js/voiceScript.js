@@ -31,13 +31,16 @@ if (annyang) {
       'Pasos': function() {
         vueModule.showSteps();
       },
-      'Oultar': function() {
+      'Ocultar': function() {
+        vueModule.hideSteps();
+      },
+      'Cerrar': function() {
         vueModule.hideSteps();
       },
       'Cerrar procedimiento': function() {
         vueModule.hideSteps();
       },
-      'Oultar procedimiento': function() {
+      'Ocultar procedimiento': function() {
         vueModule.hideSteps();
       }
     };
